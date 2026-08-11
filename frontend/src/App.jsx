@@ -25,7 +25,8 @@ export default function App() {
     formData.append('file', file);
 
     try {
-      const res = await axios.post('http://localhost:8001/api/analyze', formData);
+      // Replace line 22 inside handleFileUpload:
+      const res = await axios.post('https://ai-dashboard-app-ap44.onrender.com/api/analyze', formData);
       if (res.data.success) {
         setRawData(res.data.data);
         setSlicersConfig(res.data.slicers || {});
